@@ -19,9 +19,9 @@ const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(arrayFromLowToHigh(5
 const passwordDisplay = document.getElementById('passwordDisplay')
 const form = document.getElementById('passwordGeneratorForm')
 
-function arrayFromLowToHigh(low, high){
+function arrayFromLowToHigh(x, y){
     const array = []
-    for (let i = low; i <= high; i++) {
+    for (let i = x; i <= y; i++) {
         array.push(i)
     }
     return array
@@ -30,8 +30,11 @@ function arrayFromLowToHigh(low, high){
 
 //Checking for checked values
 const includeUppercaseElement = document.getElementById("includeUppercase")
+// console.log(includeUppercase)
 const includeSymbolsElement = document.getElementById("includeSymbols")
+// console.log(includeSymbols)
 const includeNumbersElement = document.getElementById("includeNumbers")
+// console.log(includeNumbers)
 //
 
 //Generating password in box
@@ -42,7 +45,9 @@ form.addEventListener('submit', e => {
     const includeUppercase = includeUppercaseElement.checked;
     const includeNumbers = includeNumbersElement.checked;
     const includeSymbols = includeSymbolsElement.checked;
+    // console.log("check symbols " + includeSymbols)
     const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols);
+    // console.log(password)
     passwordDisplay.innerText = password
 })
 
@@ -50,9 +55,12 @@ form.addEventListener('submit', e => {
 function generatePassword(characterAmount, includeNumbers, includeSymbols, includeUppercase){
     let charCodes = LOWERCASE_CHAR_CODES
     // if checked, it adds on the possible values of the list below.
-    if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES);
-    if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES);
-    if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES);
+    if (includeUppercase) charCodes = charCodes.concat(UPPERCASE_CHAR_CODES)
+    console.log("first " + charCodes)
+    if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
+    console.log("second " + charCodes)
+    if (includeNumbers) charCodes = charCodes.concat(NUMBER_CHAR_CODES)
+    console.log("third " + charCodes)
 
     const passwordCharacters = [];
     for (let i= 0; i < characterAmount; i++) {
