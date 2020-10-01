@@ -120,6 +120,8 @@ button[disabled] {
 .space {
   margin-left: 20px;
   display: flex;
+  margin-bottom: 0rem;
+  margin-right: 10px;
 }
 .alignment {
   justify-content: center;
