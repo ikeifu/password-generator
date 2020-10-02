@@ -46,8 +46,11 @@ form.addEventListener('submit', e => {
     e.preventDefault()
     const characterAmount = characterAmountNumber.value;
     const includeUppercase = includeUppercaseElement.checked;
+    console.log("first" + includeUppercase);
     const includeNumbers = includeNumbersElement.checked;
+    console.log("second" + includeNumbers);
     const includeSymbols = includeSymbolsElement.checked;
+    console.log("third" + includeSymbols);
     // console.log("check symbols " + includeSymbols)
     const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols);
     // console.log(password)
@@ -55,7 +58,7 @@ form.addEventListener('submit', e => {
 })
 
 
-function generatePassword(characterAmount, includeNumbers, includeSymbols, includeUppercase){
+function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols){
     let charCodes = LOWERCASE_CHAR_CODES
     // if checked, it adds on the possible values of the list below.
     if (includeSymbols) charCodes = charCodes.concat(SYMBOL_CHAR_CODES)
