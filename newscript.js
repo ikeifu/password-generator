@@ -15,8 +15,9 @@ function syncCharacterAmount(x) {
 const UPPERCASE_CHAR_CODES = randomNG(65, 90);
 // console.log("here " + UPPERCASE_CHAR_CODES);
 const LOWERCASE_CHAR_CODES = randomNG(97, 122);
-console.log("try " + LOWERCASE_CHAR_CODES);
+// console.log("try " + LOWERCASE_CHAR_CODES);
 const NUMBER_CHAR_CODES = randomNG(48, 57);
+
 const SYMBOL_CHAR_CODES = randomNG(33, 47).concat(randomNG(58,64))
 
 function randomNG(x, y){
